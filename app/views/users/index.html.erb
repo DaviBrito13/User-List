@@ -1,0 +1,25 @@
+<h1>User List</h1>
+
+<div class="border-2 p-4 rounded-md drop-shadow-lg">
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user['id'] %></td>
+          <td><%= user['name'] %></td>
+          <td>  
+          <%=user['email'] %></a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate(@users, class: "no-underline") %>
+</div>
